@@ -1,0 +1,13 @@
+.section {
+  &__text-wrapper {
+    max-width: 980px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 92px;
+  }
+
+  &__description {
+    @include font($secondary-font, 400, 15px, 24px);
+    color: $secondary-font-color;
+  }
+}

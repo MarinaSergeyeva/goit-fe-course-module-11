@@ -1,0 +1,23 @@
+.section {
+
+  &__title_decor {
+    @include font($third-font, 400, 24px, 1.2) display: block;
+    margin-bottom: 18px;
+    text-transform: initial;
+  }
+
+  &__title {
+    @include font($main-font, 700, 30px, 1.2) margin-bottom: 64px;
+    text-align: center;
+    text-transform: uppercase;
+
+
+    &::after {
+      content: '';
+      display: block;
+      @include size(60px, 3px);
+      background-color: $secondary-color;
+      margin: 40px auto 0;
+    }
+  }
+}

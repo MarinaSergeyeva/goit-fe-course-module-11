@@ -3,20 +3,13 @@
   padding-bottom: 12px;
 
   &-filling {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-wrap: wrap;
+    @extend %flex-between;
     flex-wrap: wrap;
 
     &:before {
-      content: '';
       display: block;
-      height: 1px;
-      width: 100%;
+      content: '';
+      @include size(100%, 1px);
       background-color: #e5e5e5;
       margin-bottom: 10px;
     }
@@ -24,10 +17,7 @@
 }
 
 .copyright {
-  font-family: $main-font;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.2;
+  @include font($main-font, 400, 14px, 1.2);
   padding: 10px 0px;
 }
 
@@ -41,26 +31,23 @@
 }
 
 .subscribe-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 
   &__field {
+    @include font($secondary-font, 400, 15px, 24px);
+    font-style: italic;
     border: none;
     border: 1px solid #e7e7e7;
     padding: 0 12px;
-    font-size: 15px;
-    line-height: 24px;
-    font-family: $secondary-font;
-    font-style: italic;
+
+    &::placeholder {
+      color: #cccccc;
+    }
   }
 }
 
 .btn_green {
-  min-width: 150px;
-  padding: 12px 44px;
-  background-color: $main-color;
-  color: #ffffff;
+  @include btn($main-color, #ffffff, 12px 44px, 150px);
 
   &:hover,
   &:focus {
